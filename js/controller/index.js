@@ -23,7 +23,14 @@ var indexController = {
  	 * @return: {none}
 	 */
 	swapInputs: function () {
- 		return false;
+		$("#swap").click(function(){
+			if (parser.isDigit()) {
+				this.operation = "decimal2binary";
+				//$("")
+			} else if (parser.isBit()) {
+				this.operation = "binary2decimal";
+			}	
+		});
 	},
 	/**
 	 * @name: convert
