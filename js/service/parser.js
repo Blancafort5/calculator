@@ -20,7 +20,9 @@ var parser = {
  	 * @return: true if number is between 0-9, false otherwise
 	 */
 	isDigit: function (number) {
- 		return false;
+ 		if(isNaN(number))
+ 			return false;
+ 		else return true;
 	},
 	/**
 	 * @name: isBit
