@@ -20,7 +20,7 @@ var converter = {
  	 * @return: the decimal number converted to binary
 	 */
 	decimal2binary: function (decimal) {
- 		return 0;
+ 		return parseInt(decimal, 2);
 	},
 	/**
 	 * @name: binary2decimal
