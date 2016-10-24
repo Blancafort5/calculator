@@ -29,6 +29,14 @@ var parser = {
  	 * @return: true if number is 0 or 1, false otherwise
 	 */
 	isBit: function (number) {
- 		return false;
+
+		for(var i = 0; i<number.length; i++){
+			if(number[i] != 0 || number[i] != 1){
+				return false;
+			}
+			else{
+				return true;
+			}
+		}
 	},
 }
