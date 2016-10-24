@@ -9,6 +9,10 @@
  * @return: none
  * @operations {"decimal2binary", "binary2decimal"}
  */	
+ $("#convert").click(function(){
+		indexController.convert();
+	});
+
 var indexController = {
 	version: "0.0.1",
 	operation: "decimal2binary",
@@ -33,7 +37,9 @@ var indexController = {
  	 * @params {number}
  	 * @return: {none}
 	 */
+
 	convert: function () {
+		alert(indexController.operation);
  		return false;
 	},
 }
