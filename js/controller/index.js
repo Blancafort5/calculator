@@ -22,14 +22,15 @@ var indexController = {
  	 * @params {number}
  	 * @return: {none}
 	 */
-	swapInputs: function () {
+	swapInputs: function (number) {
 		$("#swap").click(function(){
-			if (parser.isDigit()) {
+			if (number.isDigit()) {
 				this.operation = "decimal2binary";
-				//$("")
-			} else if (parser.isBit()) {
+				//$("#decimal-block:first");
+			} else if (number.isBit()) {
 				this.operation = "binary2decimal";
-			}	
+				//$("#binary-block:first");
+			}
 		});
 	},
 	/**
