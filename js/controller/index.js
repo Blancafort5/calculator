@@ -9,10 +9,7 @@
  * @return: none
  * @operations {"decimal2binary", "binary2decimal"}
  */	
- $("#convert").click(function(){
-		indexController.convert();
-	});
-
+ 
 var indexController = {
 	version: "0.0.1",
 	operation: "decimal2binary",
@@ -27,14 +24,14 @@ var indexController = {
  	 * @return: {none}
 	 */
 	swapInputs: function () {
-		$("#swap").click(function(){
+			alert("Prueba de botón");
 			if (parser.isDigit()) {
 				this.operation = "decimal2binary";
 				//$("")
 			} else if (parser.isBit()) {
 				this.operation = "binary2decimal";
 			}	
-		});
+		
 	},
 	/**
 	 * @name: convert
@@ -46,7 +43,30 @@ var indexController = {
 	 */
 
 	convert: function () {
-		alert(indexController.operation);
+		var operation = indexController.operation;
+		var decimal = 28;
+		//var decimal2 = 0;
+		var binary = "";
+		if(operation=='decimal2binary'){
+
+			do{
+				binary += decimal%2;
+				decimal = decimal/2;
+				decimal = Math.floor(decimal);
+				alert(decimal);
+				alert(binary);	
+			}while(decimal > 2 || decimal == 2);
+			alert(binary);
+		}
+		else{
+			alert("binary2decimal");
+		}
  		return false;
 	},
-}
+};
+
+$(document).ready(function() {
+	$("#convert").click(function(){
+		indexController.convert();
+	});
+});
