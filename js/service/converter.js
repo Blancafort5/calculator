@@ -29,6 +29,6 @@ var converter = {
  	 * @return: the binary number converted to decimal
 	 */
 	binary2decimal: function (binary) {
- 		return parseInt(binary, 2);
+ 		return parseInt(binary, 10);
 	},
 }
