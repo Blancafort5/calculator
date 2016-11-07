@@ -44,25 +44,13 @@ var indexController = {
 
 	convert: function () {
 		var operation = indexController.operation;
-		var decimal = 28;
-		//var decimal2 = 0;
-		var binary = "";
-		if(operation=='decimal2binary'){
 
-			do{
-				binary += decimal%2;
-				decimal = decimal/2;
-				decimal = Math.floor(decimal);
-				alert(decimal);
-				alert(binary);	
-			}while(decimal > 2 || decimal == 2);
-			alert(binary);
+		if(operation=='decimal2binary'){
+			decimal2binary($("#decimal").val());
 		}
 		else{
-			alert("binary2decimal");
+			binary2decimal($("#binary").val());	
 		}
- 		return false;
-	},
 };
 
 $(document).ready(function() {
