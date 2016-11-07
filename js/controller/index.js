@@ -1,3 +1,4 @@
+
 /**
  * "index" index view controller
  *
@@ -24,13 +25,17 @@ var indexController = {
  	 * @return: {none}
 	 */
 	swapInputs: function () {
-			alert("Prueba de botón");
-			if (parser.isDigit()) {
-				this.operation = "decimal2binary";
-				//$("")
-			} else if (parser.isBit()) {
-				this.operation = "binary2decimal";
-			}	
+		var operation = indexController.operation;
+		
+		if (operation == "decimal2binary") {
+			$("#binary-block").insertBefore($("#binary-block").prev("#decimal-block"));
+			operation = "binary2decimal";
+			alert(operation);
+		} else if (operation == "binary2decimal") {
+			$("#decimal-block").insertBefore($("#decimal-block").prev("#binary-block"));
+			operation = "decimal2binary";
+			alert(operation);
+		}	
 		
 	},
 	/**
@@ -44,18 +49,27 @@ var indexController = {
 
 	convert: function () {
 		var operation = indexController.operation;
-
-		if(operation=='decimal2binary'){
-			decimal2binary($("#decimal").val());
+		var decimal = parseInt($("#decimal").val());
+		var binary = parseInt($("#binary").val());
+		
+		if(operation=="decimal2binary"){
+			converter.decimal2binary($("#decimal").val());
+			console.log(decimal);
 		}
 		else{
-			binary2decimal($("#binary").val());	
+			alert(converter.binary2decimal($("#binary").val()));	
 		}
+	},	
 };
 
 $(document).ready(function() {
 	$("#convert").click(function(){
 		indexController.convert();
+		return false;
 	});
-	//asdf
+
+	$("#swap").click(function(){
+		indexController.swapInputs();
+		return false;
+	});
 });
