@@ -30,11 +30,9 @@ var indexController = {
 		if (operation == "decimal2binary") {
 			$("#binary-block").insertBefore($("#binary-block").prev("#decimal-block"));
 			indexController.operation = "binary2decimal";
-			alert(operation);
 		} else if (operation == "binary2decimal") {
 			$("#decimal-block").insertBefore($("#decimal-block").prev("#binary-block"));
 			indexController.operation = "decimal2binary";
-			alert(operation);
 		}	
 		
 	},
@@ -51,14 +49,13 @@ var indexController = {
 		var operation = indexController.operation;
 		var decimal = parseInt($("#decimal").val());
 		var binary = parseInt($("#binary").val());
-		alert(operation);
 		if(operation=="decimal2binary"){
-			converter.decimal2binary($("#decimal").val());
-			console.log(decimal);
-		}
+			 var div = '<label for="binary">Binary</label><br/><input type="text" class="form-control" value="'+converter.decimal2binary($("#decimal").val())+'" id="binary" placeholder="Binary">';
+			 $("#binary-block").html(div);
+			}
 		else{
-			converter.binary2decimal(binary);
-		}
+			var div2 = '<label for="decimal">Decimal</label><br/><input type="text" class="form-control" value="'+converter.binary2decimal(binary)+'" id="decimal" placeholder="Decimal">';
+		}	$("#decimal-block").html(div2);
 	},	
 };
 
