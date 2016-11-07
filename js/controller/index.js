@@ -29,11 +29,11 @@ var indexController = {
 		
 		if (operation == "decimal2binary") {
 			$("#binary-block").insertBefore($("#binary-block").prev("#decimal-block"));
-			operation = "binary2decimal";
+			indexController.operation = "binary2decimal";
 			alert(operation);
 		} else if (operation == "binary2decimal") {
 			$("#decimal-block").insertBefore($("#decimal-block").prev("#binary-block"));
-			operation = "decimal2binary";
+			indexController.operation = "decimal2binary";
 			alert(operation);
 		}	
 		
@@ -51,13 +51,13 @@ var indexController = {
 		var operation = indexController.operation;
 		var decimal = parseInt($("#decimal").val());
 		var binary = parseInt($("#binary").val());
-		
+		alert(operation);
 		if(operation=="decimal2binary"){
 			converter.decimal2binary($("#decimal").val());
 			console.log(decimal);
 		}
 		else{
-			alert(converter.binary2decimal($("#binary").val()));	
+			converter.binary2decimal(binary);
 		}
 	},	
 };
