@@ -49,21 +49,27 @@ var indexController = {
 
 	convert: function () {
 		var operation = indexController.operation;
-
-		if(operation=='decimal2binary'){
-			decimal2binary($("#decimal").val());
+		var decimal = parseInt($("#decimal").val());
+		var binary = parseInt($("#binary").val());
+		
+		if(operation=="decimal2binary"){
+			converter.decimal2binary($("#decimal").val());
+			console.log(decimal);
 		}
 		else{
-			binary2decimal($("#binary").val());	
+			alert(converter.binary2decimal($("#binary").val()));	
 		}
+	},	
 };
 
 $(document).ready(function() {
 	$("#convert").click(function(){
 		indexController.convert();
+		return false;
 	});
 
 	$("#swap").click(function(){
 		indexController.swapInputs();
+		return false;
 	});
 });
